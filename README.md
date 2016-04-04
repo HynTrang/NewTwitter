@@ -1,22 +1,26 @@
-# Project 3 - *Twitter*
+# Project 4 - *New Twitter*
 
-**Twitter** is an android app that allows a user to view his Twitter timeline and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
+**New Twitter** is an android app that allows a user to view home and mentions timelines, view user profiles with user timelines, as well as compose and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **5** hours spent in total
+Time spent: **X** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-* [ ]	User can **sign in to Twitter** using OAuth login
-* [ ]	User can **view tweets from their home timeline**
-  * [ ] User is displayed the username, name, and body for each tweet
+* [ ] The app includes **all required user stories** from Week 3 Twitter Client
+* [ ] User can **switch between Timeline and Mention views using tabs**
+  * [ ] User can view their home timeline tweets.
+  * [ ] User can view the recent mentions of their username.
+* [ ] User can navigate to **view their own profile**
+  * [ ] User can see picture, tagline, # of followers, # of following, and tweets on their profile.
+* [ ] User can **click on the profile image** in any tweet to see **another user's** profile.
+ * [ ] User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
+ * [ ] Profile view includes that user's timeline
 
 ## Video Walkthrough 
 
-Here's a walkthrough of implemented user stories:
-
-<a href="http://imgur.com/8duGkC0"><img src="http://i.imgur.com/8duGkC0.gif" title="source: imgur.com" /></a>
+<a href="http://imgur.com/N1zMGKB"><img src="http://i.imgur.com/N1zMGKB.gif" title="source: imgur.com" /></a>
 
 ## Open-source libraries used
 
@@ -25,7 +29,7 @@ Here's a walkthrough of implemented user stories:
 
 ## License
 
-    Copyright [3/28/2016] [coderschool]
+    Copyright [5/4/2016] [CoderSchool]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
