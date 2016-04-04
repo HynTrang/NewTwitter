@@ -12,6 +12,10 @@ public class User {
     private long uid;
     private String screenName;
     private String profileImageUrl;
+    private String tagLine;
+    private int follwersCount;
+    private int follwingCount;
+
 
     public String getName() {
         return name;
@@ -29,6 +33,18 @@ public class User {
         return profileImageUrl;
     }
 
+    public String getTagLine() {
+        return tagLine;
+    }
+
+    public int getFollwersCount() {
+        return follwersCount;
+    }
+
+    public int getFollwingCount() {
+        return follwingCount;
+    }
+
     //deserialize the  user json => user
     public static User fromJSON(JSONObject json){
         User u = new User();
@@ -37,6 +53,10 @@ public class User {
             u.uid = json.getLong("id");
             u.screenName = json.getString("screen_name");
             u.profileImageUrl = json.getString("profile_image_url");
+            u.tagLine = json.getString("description");
+            u.follwersCount = json.getInt("followers_count");
+            u.follwingCount = json.getInt("friends_count");
+
         } catch (JSONException e) {
             e.printStackTrace();
         }

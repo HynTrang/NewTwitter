@@ -15,6 +15,7 @@ public class Tweet {
     private long uid;// unique id for the tweet
     private User user;//store embeddied user object
     private String createdAt;
+    private String Imageresource;
 
     public String getBody() {
         return body;
@@ -31,6 +32,9 @@ public class Tweet {
     public User getUser() {
         return user;
     }
+    public String getImageresource() {
+        return Imageresource;
+    }
 
     //Deserialize the JSON and build Tweet objects
     //Tweet.fromJSON
@@ -42,6 +46,8 @@ public class Tweet {
             tweet.uid = jsonObject.getLong("id");
             tweet.createdAt = jsonObject.getString("created_at");
             tweet.user = User.fromJSON(jsonObject.getJSONObject("user"));
+            JSONArray array = jsonObject.getJSONObject("extended_entities").getJSONArray("media");
+            tweet.Imageresource = array.getJSONObject(0).getString("media_url");
         } catch (JSONException e) {
             e.printStackTrace();
         }
