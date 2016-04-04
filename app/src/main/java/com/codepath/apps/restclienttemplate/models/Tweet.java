@@ -16,6 +16,7 @@ public class Tweet {
     private User user;//store embeddied user object
     private String createdAt;
     private String Imageresource;
+//    private String Time;
 
     public String getBody() {
         return body;

@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 import org.apache.http.Header;
 import org.json.JSONObject;
 
-public class ProfileActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
     TwitterClient client;
     User user;
     @Override
@@ -26,11 +26,11 @@ public class ProfileActivity extends AppCompatActivity {
         client = TwitterApplication.getRestClient();
         client.getUserInfo(new JsonHttpResponseHandler(){
             @Override
-                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                    user = User.fromJSON(response);
-                    getSupportActionBar().setTitle("@"+user.getScreenName());
-                    populateProfileHeader(user);
-                }
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                user = User.fromJSON(response);
+                getSupportActionBar().setTitle("@" + user.getScreenName());
+                populateProfileHeader(user);
+            }
         });
         if(savedInstanceState == null){
             String screenName = getIntent().getStringExtra("screen_name");
@@ -49,6 +49,7 @@ public class ProfileActivity extends AppCompatActivity {
         TextView tvFollwers = (TextView)findViewById(R.id.tvFollwers);
         TextView tvFollwing = (TextView)findViewById(R.id.tvFollwing);
         ImageView ivProfileImage = (ImageView)findViewById(R.id.ivProfileImage);
+
         tvname.setText(user.getName());
         tvTagLine.setText(user.getTagLine());
         tvFollwers.setText(user.getFollwersCount()+" Followers");
@@ -61,6 +62,8 @@ public class ProfileActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_profile, menu);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return true;
     }
 
